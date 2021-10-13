@@ -1,0 +1,28 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.titulo{
+    text-align: center;
+    background-color: black;
+    color: aliceblue;
+    padding: 20px;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.color-b{
+    background-color: #2f4f30;
+}
+
+.carta{
+    width: 150px;
+    position: relative;
+    left: 100px;
+    margin-left: -75px;
+}
+
+
+#computadora-cartas,#jugador-cartas{
+    height: 230px;
+}
