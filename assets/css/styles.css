@@ -1,28 +1,26 @@
-*{
+html, body {
     margin: 0px;
-    padding: 0px;
+    background-color: #2F4F30;
+    color: white;
+    overflow: hidden;
 }
-.titulo{
+
+
+.titulo {
     text-align: center;
     background-color: black;
-    color: aliceblue;
+    color: white;
     padding: 20px;
-    font-size: 20px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 25px;
 }
 
-.color-b{
-    background-color: #2f4f30;
-}
-
-.carta{
-    width: 150px;
+.carta {
     position: relative;
+    width: 150px;
     left: 100px;
     margin-left: -75px;
 }
 
-
-#computadora-cartas,#jugador-cartas{
-    height: 230px;
+#computadora-cartas, #jugador-cartas {
+    height: 240px;
 }
