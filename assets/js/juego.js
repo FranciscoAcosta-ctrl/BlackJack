@@ -79,11 +79,25 @@ const turnoComputadora = (puntosMinimos) => {
             break;
         }
     } while ( (pointsOfComputer < puntosMinimos) && (puntosMinimos <= 21) );
-    
+    ganador(pointsOfPlayer,pointsOfComputer);
 }
 //Quien gano el juego?
-const ganador = (finalPointsPlayer , finalPointsComputer) =>{
-   
+const ganador = (player , computer) =>{
+    setTimeout(() => {
+        if(player > 21){
+            alert("Derrotado por la maquina.");
+        }else if(player == computer){
+            alert("Empate, nadie gana.");
+        }else{
+            if(computer > 21){
+                alert("Haz Ganado a la maquina.");
+            }else if(computer > player ){
+                alert("Derrotado por la maquina");
+            }else{
+                alert("Haz Ganado a la maquina.")
+            }
+        }
+    }, 50); 
 }
 
 //Eventos
@@ -99,19 +113,16 @@ btnPedir.addEventListener('click', () => {
     divCards.append(imgCarta);
 
     if (pointsOfPlayer > 21) {
-        console.warn('Lo siento, haz perdido.');
         btnPedir.disabled = true;
         btnDetener.disabled = true;
         turnoComputadora(pointsOfPlayer);
         burnedCard = [];
 
     } else if (pointsOfPlayer === 21) {
-        console.warn('21, Genial');
         btnPedir.disabled = true;
         btnDetener.disabled = true;
         turnoComputadora(pointsOfPlayer);
         burnedCard = [];
-        
     }
     
 });
@@ -122,15 +133,19 @@ btnDetener.addEventListener('click', ()=>{
     btnDetener.disabled = true;
 
     turnoComputadora(pointsOfPlayer);
-    
+    burnedCard = [];
 });
-/*
+
 btnNuevo.addEventListener('click', ()=>{
+    console.clear();
+
     crearDeck();
     deck = _.shuffle(deck);
+    
+
     pointsOfComputer = 0;
     pointsOfPlayer = 0;
-    handOfPlayer = [];
+    burnedCard = [];
 
     btnPedir.disabled = false;
     btnDetener.disabled = false;
@@ -138,6 +153,6 @@ btnNuevo.addEventListener('click', ()=>{
     pointsHtml[0].innerHTML = '0';
     pointsHtml[1].innerHTML = '0';
 
-    divCards.parentNode.removeChild(imgCarta);
-    divCardsComputer.remove();
-})*/
+    divCards.innerHTML = "";
+    divCardsComputer.innerHTML = "";
+})
